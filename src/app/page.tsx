@@ -8,12 +8,14 @@ import Plateau from "@/components/pages/home/Plateau";
 
 export default function Home() {
   const vm = HomeViewModel();
+  const { columns, gridCells } = vm;
   return (
     <div>
       <Container sx={{ padding: 2 }}>
         <div className=" grid">
           <Typography variant="h6">PROBLEM: MARS ROVERS</Typography>
           <Typography variant="body2">
+            {`
             A squad of robotic rovers are to be landed by NASA on a plateau on
             Mars. This plateau, which is curiously rectangular, must be
             navigated by the rovers so that their on-board cameras can get a
@@ -28,12 +30,12 @@ export default function Home() {
             left or right respectively, without moving from its current spot.
             'M' means move forward one grid point and maintain the same heading.
             Assume that the square directly North from (x, y) is (x, y+1).
+            `}
           </Typography>
 
           <InputDataComponent {...vm} />
 
-          <Plateau {...vm}/>
-         
+          <Plateau columns={columns} gridCells={gridCells} />
         </div>
       </Container>
     </div>

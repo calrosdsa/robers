@@ -47,7 +47,7 @@ const InputDataComponent = (props: {
       <div className="mt-2">
         {props.inputValues.map((item, idx) => {
           return (
-            <div className="mt-2">
+            <div key={idx} className="mt-2">
               <Typography variant="h6">Rober {idx}</Typography>
               <div className="flex flex-wrap space-x-3 mt-1">
                 <TextField
