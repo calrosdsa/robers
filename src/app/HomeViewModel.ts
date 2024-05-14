@@ -209,6 +209,10 @@ export default function HomeViewModel() {
     setColumns(h + 1);
   };
 
+  useEffect(()=>{
+    generateData()
+  },[])
+
   return {
     gridCells,
     generateData,
